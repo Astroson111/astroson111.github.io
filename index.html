@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ph3b3</title>
+<meta name="description" content="A fully local AI assistant. No cloud, no data centers. Runs entirely on hardware you own.">
+
+<meta property="og:title" content="Ph3b3">
+<meta property="og:description" content="A fully local AI assistant. No cloud, no data centers. Runs entirely on hardware you own.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ph3b3.ai/">
+
+<style>
+  /* Palette lifted from the portal (static/panel.html) so the site and the
+     thing it describes look like the same object. */
+  :root {
+    --bg:      #0f0624;
+    --surface: rgba(43, 15, 95, .55);
+    --border:  rgba(124, 58, 237, .32);
+    --purple:  #7c3aed;
+    --magenta: #e91e8c;
+    --cyan:    #00e5ff;
+    --text:    #e8d5ff;
+    --dim:     #9d7eca;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--bg);
+    /* The portal's faint diagonal weave, at the same scale. */
+    background-image:
+      linear-gradient( 45deg, transparent 48%, rgba(0,229,255,.045) 49%, rgba(0,229,255,.045) 51%, transparent 52%),
+      linear-gradient(-45deg, transparent 48%, rgba(233,30,140,.045) 49%, rgba(233,30,140,.045) 51%, transparent 52%);
+    background-size: 28px 28px;
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.65;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.25rem;
+  }
+
+  main { width: 100%; max-width: 34rem; }
+
+  .moon { display: block; margin: 0 auto 1.6rem; }
+
+  h1 {
+    font-size: clamp(2.6rem, 11vw, 3.6rem);
+    font-weight: 300;
+    letter-spacing: .06em;
+    text-align: center;
+    color: #fff;
+  }
+
+  .soul {
+    text-align: center;
+    font-size: .78rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--magenta);
+    margin-top: .5rem;
+  }
+
+  .card {
+    margin-top: 2.2rem;
+    padding: 1.35rem 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+
+  .card p + p { margin-top: .9rem; }
+  strong { color: #fff; font-weight: 600; }
+
+  nav {
+    margin-top: 1.8rem;
+    display: flex;
+    gap: .7rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  a.btn {
+    display: inline-block;
+    padding: .55rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    font-size: .9rem;
+    transition: border-color .15s, color .15s, background .15s;
+  }
+  a.btn:hover, a.btn:focus-visible {
+    border-color: var(--purple);
+    background: rgba(124, 58, 237, .16);
+    color: #fff;
+  }
+  a.btn:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+  footer {
+    margin-top: 2.4rem;
+    text-align: center;
+    font-size: .78rem;
+    color: var(--dim);
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <!-- Phoebe is the Titaness of the moon. The crescent is the whole logo. -->
+  <svg class="moon" width="88" height="88" viewBox="0 0 88 88" role="img" aria-label="Crescent moon">
+    <defs>
+      <mask id="crescent">
+        <rect width="88" height="88" fill="#000"/>
+        <circle cx="44" cy="44" r="30" fill="#fff"/>
+        <circle cx="57" cy="38" r="26" fill="#000"/>
+      </mask>
+    </defs>
+    <circle cx="44" cy="44" r="30" fill="none" stroke="#e8d5ff" stroke-width="1.25" opacity=".38"/>
+    <circle cx="44" cy="44" r="30" fill="#e8d5ff" mask="url(#crescent)"/>
+  </svg>
+
+  <h1>Ph3b3</h1>
+  <p class="soul">Made with Soul</p>
+
+  <div class="card">
+    <p>Ph3b3 (<em>Phoebe</em>) is a fully local AI assistant. She runs on hardware
+    you already own — <strong>no cloud, no data centers, no API calls leaving your
+    network</strong>. You talk to her by text or by voice, and every word stays
+    inside your walls.</p>
+
+    <p>Privacy here is architecture, not a policy page. A cloud assistant asks you
+    to trust a promise; Ph3b3 removes the wire the data would travel on.</p>
+  </div>
+
+  <nav>
+    <a class="btn" href="https://github.com/Astroson111/ph3b3">Source on GitHub</a>
+    <a class="btn" href="https://github.com/astroson111">@astroson111</a>
+  </nav>
+
+  <footer>Built in a basement in Pennsylvania.</footer>
+
+</main>
+</body>
+</html>
