@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services — Ph3b3</title>
+<meta name="description" content="Private AI and security help for small businesses in Pennsylvania. AI that runs on hardware in your office, so client files never leave the building.">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:title" content="Private AI &amp; security for small businesses">
+<meta property="og:description" content="AI that runs on hardware in your office. Client files never leave the building.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://astroson111.github.io/services.html">
+
+<!-- No external anything: no fonts, no scripts, no analytics, no CDN. Same rule as
+     index.html — the whole thesis is that she does not phone home, so neither does
+     the page that says so.
+
+     The style block below is a copy of index.html's, trimmed to the rules this page
+     actually uses (the moon, the image grid and their animations are not here).
+     Copied rather than shared because index.html inlines its own CSS by design and
+     this page must not change it. -->
+<style>
+  :root {
+    --bg:      #0f0624;
+    --surface: rgba(43, 15, 95, .55);
+    --border:  rgba(124, 58, 237, .32);
+    --purple:  #7c3aed;
+    --magenta: #e91e8c;
+    --cyan:    #00e5ff;
+    --text:    #e8d5ff;
+    --dim:     #9d7eca;
+    --ok:      #4ade80;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --mono: 'SF Mono', 'Cascadia Code', 'Consolas', ui-monospace, monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    min-height: 100svh;
+    background-color: var(--bg);
+    background-image:
+      linear-gradient( 45deg, transparent 48%, rgba(0,229,255,.045) 49%, rgba(0,229,255,.045) 51%, transparent 52%),
+      linear-gradient(-45deg, transparent 48%, rgba(233,30,140,.045) 49%, rgba(233,30,140,.045) 51%, transparent 52%);
+    background-size: 28px 28px;
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Portal chrome: the same bar that sits above every tab ───────────────── */
+  .hdr {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .65rem 1rem;
+    background: rgba(15, 6, 36, .92);
+    border-bottom: 1px solid var(--border);
+  }
+  .hdr-title {
+    font-size: 1rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--magenta), var(--cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--magenta);          /* fallback where background-clip is unsupported */
+  }
+  .hdr-splash {
+    font-size: .62rem;
+    color: rgba(0, 229, 255, .72);
+    font-family: var(--mono);
+  }
+  .hdr-pulse {
+    margin-left: auto;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--ok);
+    box-shadow: 0 0 6px var(--ok);
+    animation: blink 2s ease-in-out infinite;
+  }
+  @keyframes blink { 0%, 100% { opacity: 1 } 50% { opacity: .35 } }
+
+  /* ── Body ────────────────────────────────────────────────────────────────── */
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.25rem 3rem;
+  }
+  .wrap { width: 100%; max-width: 33rem; }
+
+  /* index.html's h1 is one word ("Ph3b3") and can afford clamp(2.7rem, 12vw,
+     3.7rem). A six-word heading at that size overflows a phone, so this page
+     keeps the same face, weight, colour and letter-spacing and steps the size
+     down. Same type, different length of sentence. */
+  h1 {
+    font-size: clamp(1.75rem, 6.5vw, 2.45rem);
+    font-weight: 300;
+    letter-spacing: .04em;
+    text-align: center;
+    color: #fff;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+  .soul {
+    text-align: center;
+    font-family: var(--mono);
+    font-size: .74rem;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: var(--magenta);
+    margin-top: .6rem;
+  }
+  .motto {
+    text-align: center;
+    color: var(--dim);
+    font-size: .96rem;
+    margin-top: 1.4rem;
+    font-style: italic;
+    text-wrap: balance;
+  }
+
+  .card {
+    margin-top: 1.9rem;
+    padding: 1.3rem 1.45rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+  .card p + p { margin-top: .85rem; }
+  strong { color: #fff; font-weight: 600; }
+
+  /* Offering cards sit closer together than the single card on the front page —
+     they read as one list rather than three separate sections. */
+  .offer { margin-top: 1rem; }
+  .offer h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: .01em;
+    margin-bottom: .45rem;
+  }
+  .offer h2 .kind {
+    display: block;
+    font-family: var(--mono);
+    font-size: .62rem;
+    font-weight: 400;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    opacity: .8;
+    margin-bottom: .3rem;
+  }
+
+  .sectionhead {
+    text-align: center;
+    font-family: var(--mono);
+    font-size: .68rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin: 2.4rem 0 .4rem;
+  }
+
+  /* One line on desktop; wraps naturally when the viewport cannot hold it. */
+  nav {
+    margin-top: 1.7rem;
+    display: flex;
+    gap: .55rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  a.btn {
+    display: inline-block;
+    padding: .55rem 1.15rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    font-size: .9rem;
+    transition: border-color .15s, background .15s, color .15s;
+  }
+  a.btn:hover { border-color: var(--purple); background: rgba(124, 58, 237, .18); color: #fff; }
+  a.btn:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+  /* index.html has no inline links at all — every link there is a .btn — so this
+     is the one rule this page adds rather than copies. Left unstyled, a link
+     inside a card renders in the browser's default blue on a purple card. */
+  a.inline { color: var(--cyan); text-decoration: underline; text-underline-offset: 2px; }
+  a.inline:hover { color: #fff; }
+  a.inline:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+  .figtail {
+    margin-top: .9rem;
+    text-align: center;
+    font-size: .74rem;
+    color: var(--dim);
+  }
+
+  footer {
+    text-align: center;
+    font-size: .74rem;
+    color: var(--dim);
+    padding: 0 1.25rem 2rem;
+  }
+  footer .mono { font-family: var(--mono); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hdr-pulse { animation: none }
+  }
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <span class="hdr-title">Ph3b3</span>
+  <span class="hdr-splash">local · private · yours</span>
+  <span class="hdr-pulse" role="status" aria-label="online"></span>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <h1>Private AI &amp; security for small businesses</h1>
+    <p class="soul">Services</p>
+
+    <p class="motto">AI that runs on hardware in your office. Client files never
+    leave the building.</p>
+
+    <div class="card">
+      <p>Built and maintained by the person who built <a class="inline" href="index.html">Ph3b3</a>
+      — a fully local AI assistant that runs with <strong>no cloud and no API calls
+      leaving the network</strong>. The same approach, set up for your business:
+      the machine sits in your office, and the files it reads stay there.</p>
+    </div>
+
+    <p class="sectionhead">What I do</p>
+
+    <div class="card offer">
+      <h2><span class="kind">01</span>Local AI setup</h2>
+      <p>An assistant and document search over your own files — contracts, invoices,
+      manuals, case notes — running on a machine in your office. Ask it questions in
+      plain English and get answers with the source document named. It works with the
+      internet unplugged, because nothing it needs is anywhere else.</p>
+    </div>
+
+    <div class="card offer">
+      <h2><span class="kind">02</span>Security checkup</h2>
+      <p>A walk through the things that actually go wrong: passwords and multi-factor
+      sign-in, how your Wi-Fi and router are configured, and a real restore from your
+      backup rather than a green light on a dashboard. You get a one-page written
+      report in plain language — what is fine, what to fix, and what it costs.</p>
+    </div>
+
+    <div class="card offer">
+      <h2><span class="kind">03</span>Ongoing care</h2>
+      <p>Monthly maintenance for what is already in place: updates applied, backups
+      verified by restoring from them, and a look at anything that has drifted since
+      last month. The point is that somebody checks on a schedule, so a failed backup
+      is found in a quiet month instead of a bad week.</p>
+    </div>
+
+    <p class="figtail">Based in Pennsylvania. Serving local businesses.</p>
+
+    <nav>
+      <a class="btn" href="mailto:OlsonEmulsionIT@proton.me">Get in touch</a>
+      <a class="btn" href="index.html">See what I've built →</a>
+    </nav>
+
+    <!-- The address in readable text as well as in the button: on a desktop with no
+         mail client configured a mailto: button is a dead end, and a business page
+         should let somebody copy the address. -->
+    <p class="figtail"><a class="inline" href="mailto:OlsonEmulsionIT@proton.me">OlsonEmulsionIT@proton.me</a></p>
+
+  </div>
+</main>
+
+<footer>
+  Built in a basement in Pennsylvania.<br>
+  <span class="mono">No cloud. No telemetry. No wire.</span>
+</footer>
+
+</body>
+</html>
